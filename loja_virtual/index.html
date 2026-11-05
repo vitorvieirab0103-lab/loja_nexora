@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Sua loja online</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="header-container">
+
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Logo NEXORA" width="70px">
+                NEXORA
+            </a>
+
+            <nav class="navigation">
+                <a href="#inicio" class="active">Início</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#categorias">Categorias</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button class="icon-button" id="favoriteButton" aria-label="Favoritos">
+                    ♡
+                </button>
+
+                <button class="cart-button" id="openCart">
+                    <span>🛒</span>
+                    Carrinho
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">BEM-VINDO À NEXORA</span>
+
+        <h1>
+            Encontre tudo o que você procura
+            <span>em um só lugar.</span>
+        </h1>
+
+        <p>
+            Explore nossa coleção e descubra produtos
+            que combinam com você.
+        </p>
+
+        <br>
+
+        <!-- BARRA DE PESQUISA -->
+<div class="search-box">
+
+    <span class="search-icon">⌕</span>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="O que você está procurando?"
+        autocomplete="off"
+    >
+
+    <button type="button" id="searchButton">
+        Buscar
+        <span>→</span>
+    </button>
+
+    <!-- RESULTADOS DA PESQUISA -->
+    <div class="search-suggestions" id="searchSuggestions"></div>
+
+</div>
+
+</section>
+
+
+        <!-- CATEGORIAS -->
+        <section class="categories-section" id="categorias">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-tag">EXPLORE</span>
+                    <h2>Compre por categoria</h2>
+                </div>
+            </div>
+
+            <div class="categories" id="categories">
+                <button class="category-button selected" data-category="all">
+                    Todos
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- PRODUTOS -->
+        <section class="products-section" id="produtos">
+
+            <div class="products-heading">
+
+                <div>
+                    <span class="section-tag">NOSSA COLEÇÃO</span>
+                    <h2>Produtos em destaque</h2>
+                    <p>Encontre seus próximos favoritos.</p>
+                </div>
+
+                <div class="products-controls">
+
+
+                    <select id="sortSelect">
+                        <option value="default">Ordenar por</option>
+                        <option value="price-asc">Menor preço</option>
+                        <option value="price-desc">Maior preço</option>
+                        <option value="rating">Melhor avaliação</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="results-info">
+                <span id="resultsCount">Carregando produtos...</span>
+            </div>
+
+
+            <div class="products-grid" id="productsGrid">
+
+                <div class="loading">
+                    Carregando produtos...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BENEFÍCIOS -->
+        <section class="benefits">
+
+            <div class="benefit">
+                <span>🚚</span>
+                <div>
+                    <h3>Entrega prática</h3>
+                    <p>Uma experiência simples de compra.</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <span>🔒</span>
+                <div>
+                    <h3>Compra segura</h3>
+                    <p>Ambiente demonstrativo e organizado.</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <span>💙</span>
+                <div>
+                    <h3>Feito para você</h3>
+                    <p>Encontre seus produtos favoritos.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <a href="#" class="logo">
+            <span class="logo-icon">N</span>
+            NEXORA
+        </a>
+
+        <p>© 2026 NEXORA. Projeto fictício para fins de estudo.</p>
+    </footer>
+
+
+    <!-- FUNDO DO CARRINHO -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- CARRINHO LATERAL -->
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+            <div>
+                <span class="section-tag">SUA SELEÇÃO</span>
+                <h2>Meu carrinho</h2>
+            </div>
+
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">R$ 0,00</strong>
+            </div>
+
+            <button class="checkout-button" id="checkoutButton">
+                Finalizar compra →
+            </button>
+
+            <p>Checkout demonstrativo. Nenhum pagamento será realizado.</p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- NOTIFICAÇÃO -->
+    <div class="toast" id="toast">
+        Produto adicionado ao carrinho!
+    </div>
+
+
+    <!-- MODAL DO PRODUTO -->
+    <div class="product-modal" id="productModal">
+
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div id="modalDetails"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
